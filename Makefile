@@ -14,7 +14,7 @@ help:
 	@echo "  recreate           recreate docker containers"
 
 build:
-	@docker-compose down --rmi all
+	@docker-compose down --rmi local
 	@docker-compose build --build-arg UID=$(DEV_UID) $(PHP_SERVICE)
 
 restart:
