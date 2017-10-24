@@ -14,3 +14,10 @@ services:
         - ./docker/nginx/nginx.conf:/etc/nginx/conf.d/default.conf
       depends_on:
       - php
+
+    db:
+      image: mysql
+      environment:
+        MYSQL_ROOT_HOST: '%'
+        MYSQL_ROOT_PASSWORD: secret
+        MYSQL_DATABASE: yii2-sample
