@@ -59,4 +59,24 @@ class Todo extends \yii\db\ActiveRecord
             TimestampBehavior::className()
         ];
     }
+
+    /**
+     * Get created at in date format
+     *
+     * @return string
+     */
+    public function getCreated()
+    {
+        return Yii::$app->formatter->asDatetime($this->created_at);
+    }
+
+    /**
+     * Get updated at in date format
+     *
+     * @return string
+     */
+    public function getUpdated()
+    {
+        return Yii::$app->formatter->asDatetime($this->updated_at);
+    }
 }
